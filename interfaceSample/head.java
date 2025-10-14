@@ -9,5 +9,8 @@ public class head {
         obj1.alreadywrite();
         obj2.returnsomething();
         obj2.alreadywrite();
+
+        interfacedemo2 obj3 = new interfacedemo2();
+        obj3.test();
     }
 }
