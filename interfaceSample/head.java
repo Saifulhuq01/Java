@@ -12,5 +12,9 @@ public class head {
 
         interfacedemo2 obj3 = new interfacedemo2();
         obj3.test();
+
+        interfacedemo3 obj4 = new interfacedemo3();
+        obj4.show();
+        System.out.println(obj4.show());
     }
 }
