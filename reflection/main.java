@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
 public class main {
-    public static void main(String[] args) throws ClassNotFoundException,NoSuchFieldException, IllegalAccessException {
+    public static void main(String[] args) throws ClassNotFoundException,NoSuchFieldException, IllegalAccessException,IllegalArgumentException {
         
         // Class classobj = Class.forName("reflection.reflectInClass");
         Class classobj = reflectInClass.class;
@@ -48,7 +48,10 @@ public class main {
         setfields.set(newobj, "fishing");
         System.out.println(newobj.fish);
 
-         Field[] privateFields = classobj.getDeclaredFields();
+
+        /////////////////////////////////////////////////////////////////////////////////////////////
+
+        Field[] privateFields = classobj.getDeclaredFields();
         // getFields() for public 
         for(Field field : privateFields){
             System.out.println("privateFields getname"+ field.getName());
@@ -56,7 +59,15 @@ public class main {
             System.out.println("*************************");
         }
 
-
+        //setting vale in private field;
+        reflectInClass newobj2 = new reflectInClass();
+        Field field = classobj.getDeclaredField("animal");
+        field.setAccessible(true);
+        field.set(newobj2, "lion"); 
+        String value = (String) field.get(newobj2); // get() returns Object, so cast
+        if ("lion".equals(value)) {
+            System.out.println("Value is set in private field: " + value);
+        }
 
         
     }
