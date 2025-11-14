@@ -13,6 +13,7 @@ public class main {
         System.out.println(classobj.getName());
         System.out.println(classobj.getDeclaringClass());
         System.out.println(Modifier.toString(classobj.getModifiers()));
+        System.out.println("*************************");
 
         // Method[] methodsPublic = classobj.getMethods();
         // // if we using getmethods it will give all public methods including inherited methods so try to use getdeclaredmethods to get all methods including private methods
@@ -38,8 +39,8 @@ public class main {
         Field[] fields = classobj.getFields();
         // getFields() for public 
         for(Field field : fields){
-            System.out.println("field getname"+ field.getName());
-            System.out.println("field gettype"+ field.getType());
+            System.out.println("field getname "+ field.getName());
+            System.out.println("field gettype "+ field.getType());
             System.out.println("*************************");
         }
         //setting vale in publ;ic field;
@@ -54,8 +55,8 @@ public class main {
         Field[] privateFields = classobj.getDeclaredFields();
         // getFields() for public 
         for(Field field : privateFields){
-            System.out.println("privateFields getname"+ field.getName());
-            System.out.println("privateFields gettype"+ field.getType());
+            System.out.println("privateFields getname "+ field.getName());
+            System.out.println("privateFields gettype "+ field.getType());
             System.out.println("*************************");
         }
 
