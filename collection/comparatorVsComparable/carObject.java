@@ -1,4 +1,4 @@
-package comparatorVsComparable;
+package collection.comparatorVsComparable;
 
 public class carObject {
     String carName;

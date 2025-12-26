@@ -1,4 +1,4 @@
-package comparatorVsComparable;
+package collection.comparatorVsComparable;
 
 import java.util.Arrays;
 import java.util.List;
