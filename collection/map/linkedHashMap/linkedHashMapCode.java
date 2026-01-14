@@ -36,7 +36,7 @@ public class linkedHashMapCode {
         map3.get(1);
         map3.forEach((Integer key, String value)-> System.out.println(key+ " : " + value));
 
-        //for thread safe version
+        //for thread safe version(reference)
         Map<Integer,String> map4 = Collections.synchronizedMap(new LinkedHashMap<>(16,.75F, true));
     }
 }
