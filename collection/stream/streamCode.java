@@ -154,8 +154,21 @@ public class streamCode {
         Optional<Integer> findResult1 = findTest.stream().filter((Integer val)-> val >4).sorted().findAny();
         System.out.println("findAny value of value of 6 : "+findResult1.get());
 
+//        12 findany() is not for stream because is not a not picker is a grab a first value is for parallel stream  because graa first value while multithread happens:
+
+        List<Integer> findany = Arrays.asList(3,2,1,3,7,5);
+        Optional<Integer> resultany = findany.stream().findAny();
+        System.out.println("findany() result: "+resultany.get());
 
 
+        List<Integer> findanyParllel = Arrays.asList(1, 2, 3, 4, 5, 6,4, 5, 6, 7, 8, 9, 104, 5, 6, 7, 8, 9, 104, 5, 6,4, 5, 6, 7, 8, 9, 104, 5, 6, 7, 8, 9, 10, 7, 8, 9, 10, 7, 8, 9, 10);
+// Run this loop multiple times to see different results
+        for(int i=0; i<5; i++) {
+            Optional<Integer> parallelResult = findanyParllel.parallelStream()
+                    .filter(val -> val > 5)
+                    .findAny(); // Might return 6, 7, 8...
+            System.out.println("Run " + i + ": " + parallelResult.get());
+        }
 
     }
 }
